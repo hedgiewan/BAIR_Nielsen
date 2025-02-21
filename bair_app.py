@@ -14,7 +14,7 @@ from PIL import Image
 import tkinter as tk
 from tkinter import filedialog
 from tkinter.constants import ACTIVE, DISABLED
-from picamera2 import PiCamera2
+from picamera2 import PiCamera
 import picamera.array
 
 class BairApp:
