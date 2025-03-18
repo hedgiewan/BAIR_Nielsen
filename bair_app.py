@@ -326,14 +326,12 @@ class BairApp:
         self.camera.stop_preview()
 
     def take_snapshot(self):
-        output = picamera.array.PiRGBArray(self.camera)
-        self.camera.capture(output, 'rgb')
-        image = Image.fromarray(output.array)
-        filename_output = filedialog.asksaveasfile(title="Choose a file",filetypes=[('jpeg','*.jpg')])
-        image.save(filename_output)
-
-        # output = Picamera2.capture_file
-
+        picam2 = Picamera2()
+        capture_config = picam2.create_still_configuration()
+        picam2.start(show_preview=True)
+        time.sleep(1)
+        picam2.switch_mode_and_capture_file(capture_config, "image.jpg")        
+        
 
 gui = BairApp()
 gui.master.mainloop()
