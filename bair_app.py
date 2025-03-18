@@ -14,7 +14,7 @@ from PIL import Image
 import tkinter as tk
 from tkinter import filedialog
 from tkinter.constants import ACTIVE, DISABLED
-from picamera2 import Picamera2, Preview
+from picamera2 import PiCamera2, Preview
 
 class BairApp:
 
@@ -326,7 +326,7 @@ class BairApp:
         self.camera.stop_preview()
 
     def take_snapshot(self):
-        picam2 = Picamera2()
+        picam2 = PiCamera2()
         capture_config = picam2.create_still_configuration()
         picam2.start(show_preview=True)
         time.sleep(1)
