@@ -10,7 +10,7 @@ from picamera2 import Picamera2, Preview
 from guizero import App, Text, TextBox, PushButton
 
 picam2 = Picamera2()
-camera_config = picam2.create_still_configuration(main={"size": (1920, 1080)}, lores={"size": 640, 480)}, display="lores")
+camera_config = picam2.create_still_configuration(main={"size": (1920, 1080)}, lores={"size": (640, 480)}, display="lores")
 
 app = App(title="Plate Photo")
 message = Text(app, text="Input File Name")
