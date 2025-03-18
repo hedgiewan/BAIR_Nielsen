@@ -15,7 +15,6 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter.constants import ACTIVE, DISABLED
 from picamera2 import Picamera2, Preview
-import time
 
 class BairApp:
 
@@ -332,6 +331,8 @@ class BairApp:
         image = Image.fromarray(output.array)
         filename_output = filedialog.asksaveasfile(title="Choose a file",filetypes=[('jpeg','*.jpg')])
         image.save(filename_output)
+
+        # output = Picamera2.capture_file
 
 
 gui = BairApp()
