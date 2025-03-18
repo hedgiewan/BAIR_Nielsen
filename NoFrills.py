@@ -17,9 +17,11 @@ def snap_plate():
 app = App(title="Plate Photo")
 message = Text(app, text="Input File Name")
 file_name = TextBox(app)
+
 PushButton(
     app,
     command=snap_plate
     text="Start"
 )
+
 app.display()
