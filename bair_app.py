@@ -15,7 +15,7 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter.constants import ACTIVE, DISABLED
 from picamera2 import Picamera2, Preview
-# import picamera.array
+import time
 
 class BairApp:
 
@@ -60,7 +60,7 @@ class BairApp:
 
 
         """ Initialize Camera """
-        self.camera = PiCamera()
+        self.camera = PiCamera2()
         self.set_image_res(self.resolution_var.get())
         self.set_shutter(self.speed_var.get())
         self.set_iso(self.iso_var.get())
