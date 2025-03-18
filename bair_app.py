@@ -326,10 +326,11 @@ class BairApp:
         self.camera.stop_preview()
 
     def take_snapshot(self):
+        filename_output = filedialog.asksaveasfile(title="Choose a file",filetypes=[('jpeg','*.jpg')])
         capture_config = self.camera.create_still_configuration()
         self.camera.start(show_preview=True)
         time.sleep(1)
-        self.camera.switch_mode_and_capture_file(capture_config, "image.jpg")        
+        self.camera.switch_mode_and_capture_file(capture_config, filename_output)        
         
 
 gui = BairApp()
