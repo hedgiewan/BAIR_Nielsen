@@ -20,7 +20,7 @@ file_name = TextBox(app)
 
 PushButton(
     app,
-    command=snap_plate
+    command=snap_plate,
     text="Start"
 )
 
