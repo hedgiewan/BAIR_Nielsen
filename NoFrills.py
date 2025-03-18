@@ -11,13 +11,10 @@ picam2.configure(camera_config)
 picam2.start_preview(Preview.QTGL)
 picam2.start()
 
-time.sleep(5)
-picam2.capture_file(file_name)
-
 app = App(title="Plate Photo")
 message = Text(app, text="Input File Name")
 file_name = TextBox(app)
-snap = PushButton(
+picam2.capture_file(file_name) = PushButton(
     app,
     command=camera_config,
     text="Start"
