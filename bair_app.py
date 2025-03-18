@@ -326,11 +326,10 @@ class BairApp:
         self.camera.stop_preview()
 
     def take_snapshot(self):
-        picam2 = Picamera2()
-        capture_config = picam2.create_still_configuration()
-        picam2.start(show_preview=True)
+        capture_config = self.camera.create_still_configuration()
+        self.camera.start(show_preview=True)
         time.sleep(1)
-        picam2.switch_mode_and_capture_file(capture_config, "image.jpg")        
+        self.camera.switch_mode_and_capture_file(capture_config, "image.jpg")        
         
 
 gui = BairApp()
